@@ -1,5 +1,5 @@
-import { injectable, inject } from "tsyringe";
-import IAppointmentsRepository from "../repositories/IAppointmentsRepository";
+import { injectable, inject } from 'tsyringe';
+import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
 
 interface IRequest {
   provider_id: string;
@@ -15,7 +15,7 @@ type IResponse = Array<{
 @injectable()
 class ListProviderMonthAvailabilityService {
   constructor(
-    @inject("AppointmentsRepository")
+    @inject('AppointmentsRepository')
     private appointmentsRepository: IAppointmentsRepository
   ) { }
 

@@ -27,7 +27,7 @@
     "prettier/prettier": [
       "error",
       {
-        "endOfLine": "auto"
+        "singleQuote": true
       }
     ],
     "class-methods-use-this": "off",
