@@ -32,7 +32,6 @@ const ForgotPassword: React.FC = () => {
             try {
                 setLoading(true);
 
-                // eslint-disable-next-line prettier/prettier
                 formRef.current?.setErrors({});
 
                 const schema = Yup.object().shape({

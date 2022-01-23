@@ -34,7 +34,6 @@ const SignIn: React.FC = () => {
     const handleSubmit = useCallback(
         async (data: ResetPasswordFormData) => {
             try {
-                // eslint-disable-next-line prettier/prettier
                 formRef.current?.setErrors({});
 
                 const schema = Yup.object().shape({

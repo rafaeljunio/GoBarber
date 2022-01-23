@@ -30,7 +30,6 @@ const SignUp: React.FC = () => {
     const handleSubmit = useCallback(
         async (data: SignUpFormData) => {
             try {
-                // eslint-disable-next-line prettier/prettier
                 formRef.current?.setErrors({});
 
                 const schema = Yup.object().shape({

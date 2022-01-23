@@ -1,6 +1,7 @@
 import User from '@modules/users/infra/typeorm/entities/User';
 import IUsersRepository from '@modules/users/repositories/IUserRepository';
 import ICacheProvider from '@shared/container/providers/CacheProvider/models/ICacheProvider';
+import { classToClass } from 'class-transformer';
 import { injectable, inject } from 'tsyringe';
 
 interface IRequest {
@@ -22,6 +23,8 @@ class ListProvidersService {
       `providers-list:${user_id}`,
     );
 
+    // let users;
+
     if (!users) {
       users = await this.usersRepository.findAllProviders({
         except_user_id: user_id,
@@ -29,7 +32,10 @@ class ListProvidersService {
 
       console.log('A query no banco foi feita');
 
-      await this.cacheProvider.save(`providers-list:${user_id}`, users);
+      await this.cacheProvider.save(
+        `providers-list:${user_id}`,
+        classToClass(users),
+      );
     }
 
     return users;
